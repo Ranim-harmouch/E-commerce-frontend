@@ -6,11 +6,12 @@ function App() {
   return (
     <Router>
       {/* <Header /> */}
+      {/* <Swiper products={products} /> */}
       <Routes>
       {/* <Route path="/" element={<Home />} /> */}
       <Route path=""  />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
     
   );
