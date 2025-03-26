@@ -1,23 +1,3 @@
-// import React from "react";
-// import "../css/navbar.css";
-// import { Link } from "react-router-dom";
-
-// const Navbar = () => {
-//   return (
-//     <aside className="sidebar">
-//       <ul>
-//         <li><Link to="/smartphones">Smartphones</Link></li>
-//         <li><Link to="/laptops">Laptops</Link></li>
-//         <li><Link to="/tvs">TVs</Link></li>
-//         <li><Link to="/smartwatches">Smartwatches</Link></li>
-//         <li><Link to="/headphones">Headphones</Link></li>
-//         <li><Link to="/others">Others</Link></li>
-//       </ul>
-//     </aside>
-//   );
-// };
-
-// export default Navbar;
 
 import React from "react";
 import { Link } from "react-router-dom";
