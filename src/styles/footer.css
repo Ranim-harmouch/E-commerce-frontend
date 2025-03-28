@@ -1,0 +1,81 @@
+.footer {
+    background-color: black;
+    color: white;
+    padding: 2rem 2rem;
+}
+
+.footer-container {
+    max-width: 72rem;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(3, 1fr);
+        text-align: left;
+    }
+}
+
+.footer-heading {
+    font-size: 1.125rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.footer-text {
+    color: #9ca3af;
+    /* Tailwind Gray-400 */
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.25rem;
+}
+
+.footer-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .social-icons {
+        justify-content: start;
+    }
+}
+
+.social-icons a {
+    color: #f9fafc;
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: white;
+}
+
+.copyright {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: #6b7280;
+    /* Tailwind Gray-500 */
+    font-size: 0.875rem;
+}
