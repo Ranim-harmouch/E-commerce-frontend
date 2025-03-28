@@ -1,0 +1,14 @@
+.white-button {
+    padding: 8px 24px; /* Equivalent to px-6 py-2 */
+    font-size: 14px; /* Equivalent to text-sm */
+    font-weight: 600; /* Equivalent to font-semibold */
+    border-radius: 1px; /* Equivalent to rounded-md */
+    border: 1px solid black; /* Equivalent to border-black */
+    color: black; /* Equivalent to text-black */
+    background-color: white;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .white-button:hover {
+    background-color: #f3f3f3; /* Equivalent to hover:bg-gray-100 */
+  }  
