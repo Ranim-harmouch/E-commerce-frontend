@@ -1,0 +1,14 @@
+.red-button {
+    padding: 8px 24px; /* Equivalent to px-6 py-2 */
+    font-size: 14px; /* Equivalent to text-sm */
+    font-weight: 600; /* Equivalent to font-semibold */
+    border-radius: 1px; /* Equivalent to rounded-md */
+    background-color: #e53e3e; /* Equivalent to bg-red-600 */
+    color: white; /* Equivalent to text-white */
+    border: none;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .red-button:hover {
+    background-color: #c53030; /* Equivalent to hover:bg-red-700 */
+  }  
