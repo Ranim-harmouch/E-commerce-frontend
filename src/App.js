@@ -13,15 +13,15 @@ import About from "./pages/about";
 function App() {
   return (
     <Router>
-      <Header />
+      {/* <Header /> */}
       <div style={{ display: "flex" }}>
-        <Sidebar />
+        {/* <Sidebar /> */}
         <div style={{ flex: 1}}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
           {/* <div className="flex gap-4 p-6">
             <RedButton label="View all Products" to="/product" />
             <WhiteButton label="Return To Shop" to="/shop" />

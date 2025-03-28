@@ -6,28 +6,29 @@ import RedButton from "../components/Redbutton";
 // import ProductItem from "../components/ProductItem";
 import "../styles/home.css";
 import image from "../assets/Side Image.png";
+import Swiper from "../components/Swiper";
 
 const Home = () => {
     const flashSaleProducts = [
         {
           id: 1,
           title: "Red Gaming Controller",
-          image: "/images/controller.png",
+          image: {image},
         },
         {
           id: 2,
           title: "RGB Mechanical Keyboard",
-          image: "/images/keyboard.png",
+          image: {image},
         },
         {
           id: 3,
           title: "MSI Curved Monitor",
-          image: "/images/monitor.png",
+          image: {image},
         },
         {
           id: 4,
           title: "Modern Chair",
-          image: "/images/chair.png",
+          image: {image},
         },
       ];
       
