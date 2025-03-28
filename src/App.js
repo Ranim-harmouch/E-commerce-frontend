@@ -6,6 +6,8 @@ import Sidebar from "./components/sidebar";
 import Footer from "./components/footer";
 import RedButton from "./components/Redbutton";
 import WhiteButton from "./components/WhiteButton";
+import Home from "./pages/home";
+import About from "./pages/about";
 
 
 function App() {
@@ -14,16 +16,16 @@ function App() {
       <Header />
       <div style={{ display: "flex" }}>
         <Sidebar />
-        <div style={{ flex: 1, padding: "20px" }}>
+        <div style={{ flex: 1}}>
           <Routes>
-            {/* <Route path="/" element={<Home />} /> */}
-            <Route path="" />
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
           </Routes>
           <Footer />
-          <div className="flex gap-4 p-6">
-          <RedButton label="View all Products" to="/product" />
-          <WhiteButton label="Return To Shop" to="/shop" />
-          </div>
+          {/* <div className="flex gap-4 p-6">
+            <RedButton label="View all Products" to="/product" />
+            <WhiteButton label="Return To Shop" to="/shop" />
+          </div> */}
         </div>
       </div>
     </Router>
