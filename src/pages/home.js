@@ -1,81 +1,71 @@
 import React from "react";
-// import Header from "../components/header";
-// import Sidebar from "../components/sidebar";
-// import Footer from "../components/footer";
+import Header from "../components/header";
+import Sidebar from "../components/sidebar";
+import Footer from "../components/footer";
 import RedButton from "../components/Redbutton";
-// import ProductItem from "../components/ProductItem";
+import FlashSales from "../components/FlashSales"; // Import FlashSales component
+import BestSellingProducts from "../components/BestSellingProducts";
+import OurProducts from "../components/OurProducts";
 import "../styles/home.css";
 import image from "../assets/Side Image.png";
-import Swiper from "../components/Swiper";
+import BackToTop from "../components/BackToTop";
 
 const Home = () => {
-    const flashSaleProducts = [
-        {
-          id: 1,
-          title: "Red Gaming Controller",
-          image: {image},
-        },
-        {
-          id: 2,
-          title: "RGB Mechanical Keyboard",
-          image: {image},
-        },
-        {
-          id: 3,
-          title: "MSI Curved Monitor",
-          image: {image},
-        },
-        {
-          id: 4,
-          title: "Modern Chair",
-          image: {image},
-        },
-      ];
-      
     return (
-        <div className="home-container">
-            {/* <Header /> */}
-            <div className="home-content">
-                {/* <Sidebar /> */}
-                <main className="home-main">
-                    {/* Hero Section */}
-                    <section className="hero">
-                        <img src={image} alt="Shopping" className="hero-image" />
-                    </section>
-
-                    {/* Flash Sales */}
-                    <section className="flash-sales">
-                        <h2>Flash Sales</h2>
-                        <div className="products-grid">
-                            <Swiper products={flashSaleProducts} />
-                        </div>
-                        <RedButton label="View All Products" to="/about" />
-                    </section>
-
-                    {/* Best Selling Products */}
-                    <section className="best-sellers">
-                        <h2>Best Selling Products</h2>
-                        <div className="products-grid">
-                            {/* <ProductItem name="Coat" price="$260" />
-              <ProductItem name="Bag" price="$960" />
-              <ProductItem name="Cooler" price="$160" />
-              <ProductItem name="Bookshelf" price="$380" /> */}
-                        </div>
-                    </section>
-
-                    {/* Explore Our Products */}
-                    <section className="explore-products">
-                        <h2>Explore Our Products</h2>
-                        <div className="products-grid">
-                            {/* <ProductItem name="Camera" price="$360" />
-              <ProductItem name="Laptop" price="$700" />
-              <ProductItem name="Skincare Set" price="$500" />
-              <ProductItem name="Car" price="$960" /> */}
-                        </div>
-                    </section>
-                </main>
+        <div>
+            <div className="black-rectangle"></div>
+            <Header />
+            <div className="div-container">
+                <div className="sidebar-area">
+                    <Sidebar />
+                    <div className="image">
+                        <img src={image} alt="Home-image" />
+                    </div>
+                </div>
+                {/* Flash Sales Section */}
+                <div>
+                    <div className="flash-sale">
+                        <div className="rectangle"></div>
+                        <div>Today's</div>
+                    </div>
+                    <div className="flash-sales">
+                        <section className="w-full mt-8 px-4">
+                            <FlashSales />
+                        </section>
+                        <RedButton label="View all Products" to="/product" />
+                    </div>
+                </div>
+                <hr className="w-full border-t border-gray-400 my-6" />
+                {/* Best Selling Products Section */}
+                <div>
+                    <div className="flash-sale">
+                        <div className="rectangle"></div>
+                        <div>This Month</div>
+                    </div>
+                    <div className="flash-sales">
+                        <section className="w-full mt-8 px-4">
+                            <BestSellingProducts />
+                        </section>
+                    </div>
+                </div>
+                <div className="h-24"></div>
+                {/* Our Products Section */}
+                <div>
+                    <div className="flash-sale">
+                        <div className="rectangle"></div>
+                        <div>Our Products</div>
+                    </div>
+                    <div className="flash-sales">
+                        <section className="w-full mt-8 px-4">
+                            <OurProducts />
+                        </section>
+                        <RedButton label="View all Products" to="/product" />
+                    </div>
+                </div>
+                <div className="h-24"></div>
+                <BackToTop />
             </div>
-            {/* <Footer /> */}
+            <Footer />
         </div>
     );
 };
