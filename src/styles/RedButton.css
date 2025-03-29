@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+.red-button {
+  font-family: 'Poppins', sans-serif;
+    padding: 11px 45px; /* Equivalent to px-6 py-2 */
+    font-size: 16px; /* Equivalent to text-sm */
+    font-weight: 400; /* Equivalent to font-semibold */
+    border-radius: 4px; /* Equivalent to rounded-md */
+    background-color: #e53e3e; /* Equivalent to bg-red-600 */
+    color: white; /* Equivalent to text-white */
+    border: none;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .red-button:hover {
+    background-color: #c53030; /* Equivalent to hover:bg-red-700 */
+  }  
