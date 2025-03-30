@@ -1,11 +1,13 @@
 import React from "react";
-// import Header from "../components/header";
-// import Sidebar from "../components/sidebar";
-// import Footer from "../components/footer";
+//  import Header from "../components/header";
+//  import Sidebar from "../components/sidebar";
+//  import Footer from "../components/footer";
 import RedButton from "../components/Redbutton";
 // import ProductItem from "../components/ProductItem";
 import "../styles/home.css";
 import image from "../assets/Side Image.png";
+ import { Swiper } from 'swiper/react'; // Import Swiper component
+//mport 'swiper/css'; // Import Swiper styles
 
 const Home = () => {
     const flashSaleProducts = [

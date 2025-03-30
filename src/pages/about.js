@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../components/header";
-import Footer from "../components/footer";
+ import Header from "../components/header";
+ import Footer from "../components/footer";
 import "../styles/about.css";
 import image from "../assets/Side Image.png";
 
