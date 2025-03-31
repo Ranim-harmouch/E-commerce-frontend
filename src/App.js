@@ -1,39 +1,37 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Home from './pages/home';
-import LoginPage from './pages/loginPage';  // Updated import
-// import RedButton from "./components/Redbutton";
-// import WhiteButton from "./components/WhiteButton";
+import LoginPage from './pages/loginPage';
 import About from "./pages/about";
-import SignupPage from './pages/signupPage';  // Updated import
-// import CartPage from './pages/cartPage';  // Updated import
-import Dashboard from './pages/Dashboard'; // Protected page
-import Unauthorized from './pages/Unauthorized'; // Unauthorized access page
-import ProtectedRoute from './components/ProtectedRoute'; // ProtectedRoute component
-
+import SignupPage from './pages/signupPage';
+import Dashboard from './pages/Dashboard';
+import Unauthorized from './pages/Unauthorized';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const App = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    // Check if authToken is stored in localStorage
+    const authToken = localStorage.getItem('authToken');
+    setIsAuthenticated(!!authToken); // Convert token to boolean (true if exists)
+  }, []);
+
   return (
     <Router>
-      <div>
-          <Routes>
-             <Route path="/" element={<Home />} /> 
-            <Route path="/signup" element={<SignupPage />} />  {/* Updated route */}
-            {/* <Route path="/about" element={<About />} /> */}
-            <Route path="/login" element={<LoginPage />} />  {/* Updated route */}
-            {/* <Route path="/cart" element={<CartPage />} /> */}
-            {/* <Route path="/dashboard" element={<DashboardPage />} /> */}
+      <Routes>
+        {/* Redirect user to Signup if not authenticated */}
+        <Route path="/" element={isAuthenticated ? <Navigate to="/dashboard" /> : <SignupPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        {/* Protect Home, About, and Dashboard */}
+        <Route path="/home" element={ <ProtectedRoute> <Home /> </ProtectedRoute> } />
+        <Route path="/about" element={ <ProtectedRoute> <About /> </ProtectedRoute> } />
+        <Route path="/dashboard" element={ <ProtectedRoute> <Dashboard /> </ProtectedRoute> } />
 
-           {/* Protected About Page */}
-           <Route path="/about" element={ <ProtectedRoute>   <About /> </ProtectedRoute> } />
-           {/* Protected Route for Dashboard */}
-           <Route path="/dashboard" element={   <ProtectedRoute>     <Dashboard />   </ProtectedRoute>    } />
-          {/* Route for Unauthorized page */}
-           <Route path="/unauthorized" element={<Unauthorized />} />
-
-          </Routes>
-       </div>
-    </Router> 
+        <Route path="/unauthorized" element={<Unauthorized />} />
+      </Routes>
+    </Router>
   );
 };
 
