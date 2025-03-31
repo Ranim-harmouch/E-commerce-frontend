@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import { CartProvider } from './context/CartContext';  // Import the CartProvider
 import Home from './pages/home';
 import LoginPage from './pages/loginPage';  // Updated import
 // import Dashboard from './pages/dashboard';
@@ -10,25 +11,28 @@ import LoginPage from './pages/loginPage';  // Updated import
 // import WhiteButton from "./components/WhiteButton";
 import About from "./pages/about";
 import SignupPage from './pages/signupPage';  // Updated import
-import CartPage from './pages/cartPage';  // Updated import
+// import CartPage from './pages/cartPage';  // Updated import
+
 
 
 const App = () => {
   return (
+    // <CartProvider>  {/* Wrap your app with CartProvider */}
     <Router>
       <div>
-        <div>
+        {/* <div> */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/signup" element={<SignupPage />} />  {/* Updated route */}
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<LoginPage />} />  {/* Updated route */}
-            <Route path="/cart" element={<CartPage />} />
+            {/* <Route path="/cart" element={<CartPage />} /> */}
                 {/* <Route path="/dashboard" element={<DashboardPage />} /> */}
           </Routes>
-         </div>
+         {/* </div> */}
        </div>
     </Router> 
+    // </CartProvider>
   );
 };
 

@@ -1,25 +1,19 @@
 import React from "react";
-<<<<<<< HEAD
-//  import Header from "../components/header";
-//  import Sidebar from "../components/sidebar";
-//  import Footer from "../components/footer";
-=======
 import Header from "../components/header";
 import Sidebar from "../components/sidebar";
 import Footer from "../components/footer";
->>>>>>> main
 import RedButton from "../components/Redbutton";
 import FlashSales from "../components/FlashSales"; // Import FlashSales component
 import BestSellingProducts from "../components/BestSellingProducts";
 import OurProducts from "../components/OurProducts";
 import "../styles/home.css";
 import image from "../assets/Side Image.png";
-<<<<<<< HEAD
- import { Swiper } from 'swiper/react'; // Import Swiper component
+
+//  import { Swiper } from 'swiper/react'; // Import Swiper component
 //mport 'swiper/css'; // Import Swiper styles
-=======
+
 import BackToTop from "../components/BackToTop";
->>>>>>> main
+
 
 const Home = () => {
     return (

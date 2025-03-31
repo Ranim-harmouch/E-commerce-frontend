@@ -59,4 +59,3 @@ const ProductCard = ({ product, index }) => {
 
 export default ProductCard;
 
-

@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../services/authService';
 
+import Header from '../components/header';  // Import Header
+import Footer from '../components/footer';  // Import Footer
+
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -28,6 +31,8 @@ const LoginPage = () => {
   };
 
   return (
+    <div>
+      <Header />  {/* Include Header */}
     <div className="flex justify-center items-center min-h-screen bg-white">
       <div className="w-full max-w-sm p-8">
         <h2 className="text-2xl font-semibold mb-6">
@@ -73,6 +78,8 @@ const LoginPage = () => {
           </button>
         </div>
       </div>
+    </div>
+    <Footer />  {/* Include Footer */}
     </div>
   );
 };

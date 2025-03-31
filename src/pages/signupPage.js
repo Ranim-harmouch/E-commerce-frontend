@@ -1,93 +1,76 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { register } from '../services/authService';
+import { useState } from "react"; 
+import { registerUser } from "../services/authService";
+import { useNavigate } from "react-router-dom";
+import "../styles/signup.css"; // Import the CSS file
+
+import Header from "../components/header"; // Import the Header component
+import Footer from "../components/footer"; // Import the Footer component
+
 
 const SignupPage = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+    const [formData, setFormData] = useState({ name: "", email: "", password: "" });
+    const [error, setError] = useState("");
+    const navigate = useNavigate();
 
-  const handleSignup = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
-
-    try {
-        const data = await register(name, email, password);
-    
-        if (data.token) {
-          localStorage.setItem('authToken', data.token);
-          navigate('/dashboard');
-        }
-      } catch (err) {
-        // Handle the "Email already in use" error
-        if (err.message.includes('Email already in use')) {
-          setError('Email is already registered. Please use a different email.');
-        } else {
-          setError('Signup Error: ' + err.message);
-        }
-      } finally {
-        setLoading(false);
-      }
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
-    
-  return (
-    <div className="flex justify-center items-center min-h-screen bg-white">
-      <div className="w-full max-w-sm p-8">
-        <h2 className="text-2xl font-semibold mb-6">
-         Create an account<span className="font-bold"></span>
-        </h2>
-        <p className="text-gray-600 mb-6">Enter your details below</p>
 
-        {error && <div className="bg-red-100 text-red-600 p-2 rounded mb-4 text-center">{error}</div>}
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError("");
 
-        <form onSubmit={handleSignup} className="space-y-4">
-          <input
-            type="text"
-            placeholder=" Name"
-            className="w-full p-3 border-b border-gray-400 focus:outline-none text-gray-700"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full p-3 border-b border-gray-400 focus:outline-none text-gray-700"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            className="w-full p-3 border-b border-gray-400 focus:outline-none text-gray-700"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+        const response = await registerUser(formData);
+        if (response.data) {
+            alert("User registered successfully!");
+            navigate("/"); // Redirect to homepage
+        } else {
+            setError(response.message || "Registration failed");
+        }
+    };
 
-          <button
-            type="submit"
-            className="w-40 bg-red-500 text-white py-3 rounded mt-4 font-medium"
-            disabled={loading}
-          >
-            {loading ? 'Signing up...' : 'Create Account'}
-          </button>
-        </form>
-
-        <div className="text-right mt-3">
-          <p className="text-sm">
-            Already have an account?{' '}
-            <a href="/login" className="text-red-500">Log in</a>
-          </p>
+    return (
+        <div>
+            <Header /> {/* Include Header */}
+        <div className="signup-container">
+            <h3>Create an Account</h3>
+            <p>Enter your details below </p>
+            {error && <p className="error-message">{error}</p>}
+            <form onSubmit={handleSubmit}>
+                <label>Name</label>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder=" Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                />
+                <label>Email</label>
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                />
+                <label>Password</label>
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    required
+                />
+                <button type="submit">Create Account</button>
+            </form>
+            <p>Already have an account? <a href="/login">Login</a></p>
         </div>
-      </div>
-    </div>
-  );
+        <Footer /> {/* Include Footer */}
+        </div>
+    );
 };
 
 export default SignupPage;

@@ -1,6 +1,7 @@
 // /services/authService.js
 
 const LOGIN_URL = 'http://localhost:5000/users/login';  // Replace with your API endpoint
+const REGISTER_URL = 'http://localhost:5000/users/register';
 
 // Function to handle login
 export const login = async (email, password) => {
@@ -25,20 +26,25 @@ export const login = async (email, password) => {
   }
 };
 
-export const register = async (name, email, password) => {
-  const response = await fetch('http://localhost:5000/users/register', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ name, email, password }),
-  });
+// Function to handle user registration (Signup)
+export const registerUser = async (userData) => {
+  try {
+    const response = await fetch(REGISTER_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userData),
+    });
 
-  const responseData = await response.json();
+    if (!response.ok) {
+      throw new Error('Failed to register user');
+    }
 
-  if (!response.ok) {
-    throw new Error(responseData.message || 'Signup failed');
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error registering user:', error);
+    throw error;
   }
-
-  return responseData;
 };
