@@ -8,7 +8,12 @@ import BestSellingProducts from "../components/BestSellingProducts";
 import OurProducts from "../components/OurProducts";
 import "../styles/home.css";
 import image from "../assets/Side Image.png";
+
+//  import { Swiper } from 'swiper/react'; // Import Swiper component
+//mport 'swiper/css'; // Import Swiper styles
+
 import BackToTop from "../components/BackToTop";
+
 
 const Home = () => {
     return (

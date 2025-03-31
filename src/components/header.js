@@ -1,9 +1,20 @@
-
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Make sure useNavigate is imported
 import { FaShoppingCart, FaUser, FaSearch } from "react-icons/fa";
 
 const Header = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  // Function to navigate to the Cart page
+  const handleCartClick = () => {
+    navigate("/cart"); // Change "/cart" to the correct path for your Cart page
+  };
+
+  // Function to navigate to the Login page
+  const handleUserClick = () => {
+    navigate("/login"); // Change "/login" to the correct path for your Login page
+  };
+
   return (
     <header className="flex justify-between items-center p-4 md:p-6 bg-white border-b border-gray-300 shadow-sm">
       {/* Logo */}
@@ -38,12 +49,18 @@ const Header = () => {
         </div>
         
         {/* Cart Icon */}
-        <button className="text-gray-600 hover:text-gray-900 text-xl">
+        <button 
+          className="text-gray-600 hover:text-gray-900 text-xl" 
+          onClick={handleCartClick} // Add the click handler for the cart icon
+        >
           <FaShoppingCart />
         </button>
 
         {/* User Icon */}
-        <button className="text-gray-600 hover:text-gray-900 text-xl">
+        <button 
+          className="text-gray-600 hover:text-gray-900 text-xl" 
+          onClick={handleUserClick} // Add the click handler for the user icon
+        >
           <FaUser />
         </button>
       </div>

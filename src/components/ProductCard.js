@@ -32,8 +32,7 @@ const ProductCard = ({ product, index }) => {
       {index === 1 && (
         // <button className="mt-2 w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition">
       <button className="absolute bottom-28 w-60 bg-black text-white py-2 rounded hover:bg-gray-800 transition">
- 
-          Add To Cart
+        Add To Cart
         </button>
       )}
 
@@ -59,5 +58,4 @@ const ProductCard = ({ product, index }) => {
 };
 
 export default ProductCard;
-
 
