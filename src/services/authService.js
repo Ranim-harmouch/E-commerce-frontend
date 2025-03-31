@@ -19,6 +19,11 @@ export const login = async (email, password) => {
     }
 
     const data = await response.json();
+
+    // Save token and user role
+    localStorage.setItem('authToken', data.token);
+    localStorage.setItem('userRole', data.role); // Assuming role is returned from server
+    
     return data;  // Assuming the response contains user data or a token
   } catch (error) {
     console.error('Login error:', error);

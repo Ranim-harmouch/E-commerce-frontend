@@ -20,7 +20,7 @@ const LoginPage = () => {
     try {
       const data = await login(email, password);
       if (data.token) {
-        localStorage.setItem('authToken', data.token);
+        // Navigate to dashboard after successful login
         navigate('/dashboard');
       }
     } catch (err) {
