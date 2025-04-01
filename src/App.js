@@ -12,7 +12,7 @@ import Contact from "./pages/contact";
 import ProtectedRoute from './components/ProtectedRoute';
 import CartPage from "./pages/CartPage";  // Your cart page
 import ChekoutPage from "./pages/CheckoutPage"; // Your checkout page
-
+import ProductPage from "./pages/ProductPage"; 
 const App = () => {
 
   return (
@@ -35,6 +35,7 @@ const App = () => {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/contact" element={<Contact />}/>
         <Route path="/checkout" element={<ChekoutPage />} />
+        <Route path="/product" element={<ProductPage />} /> 
         
       </Routes>
 
