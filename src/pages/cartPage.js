@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import Header from '../components/header';
 import Footer from '../components/footer';
+import RedButton from "../components/Redbutton"; // Adjust the path if needed
 
 const CartPage = () => {
   const { cart, removeFromCart, updateQuantity } = useContext(CartContext);
@@ -85,7 +86,8 @@ const CartPage = () => {
               <p>Shipping: <span className="float-right">Free</span></p>
               <hr className="my-2" />
               <p className="font-bold">Total: <span className="float-right">${subtotal.toFixed(2)}</span></p>
-              <button className="w-full mt-4 bg-red-500 text-white py-2">Proceed to Checkout</button>
+              {/* Replace the default button with RedButton */}
+              <RedButton label="Proceed to Checkout" to="/checkout" />
             </div>
           </>
         )}
