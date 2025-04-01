@@ -1,22 +1,44 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Footer from "./components/Footer";
-// import Contact from "./pages/contact";
-import Dashboard from "./pages/dashboard";
 
-function App() {
+import React from 'react';
+import { CartProvider } from "./context/CartContext";  // Import the CartProvider
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/home';
+import LoginPage from './pages/loginPage';
+import About from "./pages/about";
+import SignupPage from './pages/signupPage';
+import Dashboard from './pages/Dashboard';
+import Unauthorized from './pages/Unauthorized';
+ import Contact from "./pages/contact";
+import ProtectedRoute from './components/ProtectedRoute';
+import CartPage from "./pages/CartPage";  // Your cart page
+
+const App = () => {
+
   return (
+    <CartProvider>
     <Router>
-      
+
       <Routes>
-      {/* <Route path="/" element={<Home />} /> */}
-      <Route path="/" element={<Dashboard />} />
-      {/* <Route path="/contact "   element={<Contact />}/> */}
+        {/* Home is now the default page at "/" */}
+        <Route path="/" element={<Home />} />
+
+        {/* Signup and Login Routes */}
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<LoginPage />} />
+
+        {/* Protected Routes */}
+        <Route path="/about" element={<ProtectedRoute><About /></ProtectedRoute>} />
+        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+
+        <Route path="/unauthorized" element={<Unauthorized />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/contact "   element={<Contact />}/>
+        
       </Routes>
 
     </Router>
-    
+   </CartProvider>
   );
-}
+};
 
 export default App;

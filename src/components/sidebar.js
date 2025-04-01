@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <aside className="w-52 bg-white p-5 border-r border-gray-300">
+    <aside className="w-52 bg-white p-5 border-r border-gray-300" style={{ height: "fit-content" }}>
       <ul className="list-none p-0">
         <li className="mb-4">
           <Link to="/smartphones" className="text-black text-lg hover:text-[#DB4444]">
