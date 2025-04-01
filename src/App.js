@@ -6,9 +6,9 @@ import Home from './pages/home';
 import LoginPage from './pages/loginPage';
 import About from "./pages/about";
 import SignupPage from './pages/signupPage';
-import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/dashboard';
 import Unauthorized from './pages/Unauthorized';
- import Contact from "./pages/contact";
+import Contact from "./pages/contact";
 import ProtectedRoute from './components/ProtectedRoute';
 import CartPage from "./pages/CartPage";  // Your cart page
 
@@ -32,7 +32,7 @@ const App = () => {
 
         <Route path="/unauthorized" element={<Unauthorized />} />
         <Route path="/cart" element={<CartPage />} />
-        <Route path="/contact "   element={<Contact />}/>
+        <Route path="/contact" element={<Contact />}/>
         
       </Routes>
 

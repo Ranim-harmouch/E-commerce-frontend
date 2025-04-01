@@ -3,11 +3,13 @@ import React from "react";
 import Header from "../components/header";
 import ContactForm from "../components/contactForm";
 import { FiMail } from "react-icons/fi";
+import Footer from "../components/footer";
 
 const ContactPage = () => {
   return (
-    <div className="bg-white">
+    <div>
       <Header />
+    <div className="bg-white">
       <div className="container mx-auto py-12 px-6">
         <div className="text-gray-500 mb-6">Home / <span className="text-black">Contact</span></div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
@@ -29,9 +31,11 @@ const ContactPage = () => {
           <div>
             <ContactForm />
             </div>
-          
+         
         </div>
       </div>
+    </div>
+    <Footer />
     </div>
   );
 };
