@@ -1,6 +1,8 @@
 
+
 // import React from "react";
 import { Link } from "react-router-dom";
+
 // import React from "react";
 import React, { useContext } from "react"; // ✅ Add useContext import
 import { CartContext } from "../context/CartContext";
@@ -43,10 +45,6 @@ const ProductCard = ({ product, index }) => {
         </Link>
       )}
 
-
-      {/* Add to Cart Button (Only for second product)
-      {index === 1 && (
-        <button className="absolute bottom-28 w-60 bg-black text-white py-2 rounded hover:bg-gray-800 transition"> */}
 
        {/* Add to Cart Button for the first product 'HAVIT HV-G92 Gamepad' and second product 'AK-900 Wired Keyboard' */}
        {(product.name === "HAVIT HV-G92 Gamepad" || product.name === "AK-900 Wired Keyboard") && (
