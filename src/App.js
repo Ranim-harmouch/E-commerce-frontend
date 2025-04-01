@@ -7,6 +7,8 @@ import SignupPage from './pages/signupPage';
 import Dashboard from './pages/Dashboard';
 import Unauthorized from './pages/Unauthorized';
 import ProtectedRoute from './components/ProtectedRoute';
+import SingleProductPage from "./pages/SingleProductPage";
+import ProductsByCategoryPage from "./pages/ProductsByCategoryPage";
 
 const App = () => {
   return (
@@ -18,6 +20,10 @@ const App = () => {
         {/* Signup and Login Routes */}
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
+
+        {/* Single Product Page and Products By Category Page */}
+        <Route path="/product/:id" element={<SingleProductPage />} />
+        <Route path="/products/category/:category" element={<ProductsByCategoryPage />} />
 
         {/* Protected Routes */}
         <Route path="/about" element={<ProtectedRoute><About /></ProtectedRoute>} />
