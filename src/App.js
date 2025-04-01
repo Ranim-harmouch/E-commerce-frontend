@@ -10,12 +10,12 @@ import Dashboard from './pages/dashboard';
 import Unauthorized from './pages/Unauthorized';
 import Contact from "./pages/contact";
 import ProtectedRoute from './components/ProtectedRoute';
-import CartPage from "./pages/CartPage";  // Your cart page
+import CartPage from "./pages/cartPage";  // Your cart page
 
 import SingleProductPage from "./pages/SingleProductPage";
 import ProductsByCategoryPage from "./pages/ProductsByCategoryPage";
 
-import CartPage from "./pages/CartPage";  // Your cart page
+// import CartPage from "./pages/cartPage";  // Your cart page
 
 
 const App = () => {
