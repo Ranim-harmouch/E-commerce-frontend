@@ -11,6 +11,7 @@ import Unauthorized from './pages/Unauthorized';
 import Contact from "./pages/contact";
 import ProtectedRoute from './components/ProtectedRoute';
 import CartPage from "./pages/CartPage";  // Your cart page
+import ChekoutPage from "./pages/CheckoutPage"; // Your checkout page
 
 const App = () => {
 
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="/unauthorized" element={<Unauthorized />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/contact" element={<Contact />}/>
+        <Route path="/checkout" element={<ChekoutPage />} />
         
       </Routes>
 
