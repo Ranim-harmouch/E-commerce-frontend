@@ -1,6 +1,19 @@
-import React from "react";
+// import React from "react";
+import React, { useContext } from "react"; // ✅ Add useContext import
+import { CartContext } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
+
 
 const ProductCard = ({ product, index }) => {
+  const { addToCart } = useContext(CartContext);
+  const navigate = useNavigate();
+
+  const handleAddToCart = () => {
+    addToCart(product);
+    navigate("/cart"); // Redirect to cart page
+  };
+  
+
   // Calculate old price using discount
   const oldPrice = product.discount
     ? (product.price / (1 - product.discount / 100)).toFixed(2)
@@ -28,11 +41,13 @@ const ProductCard = ({ product, index }) => {
         
       )}
 
-      {/* Add to Cart Button (Only for second product) */}
-      {index === 1 && (
-        // <button className="mt-2 w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition">
-      <button className="absolute bottom-28 w-60 bg-black text-white py-2 rounded hover:bg-gray-800 transition">
-        Add To Cart
+       {/* Add to Cart Button for the first product 'HAVIT HV-G92 Gamepad' and second product 'AK-900 Wired Keyboard' */}
+       {(product.name === "HAVIT HV-G92 Gamepad" || product.name === "AK-900 Wired Keyboard") && (
+        <button
+          onClick={handleAddToCart}
+          className="absolute bottom-28 w-60 bg-black text-white py-2 rounded hover:bg-gray-800 transition"
+        >
+          Add To Cart
         </button>
       )}
 
