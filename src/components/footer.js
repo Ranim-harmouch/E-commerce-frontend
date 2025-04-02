@@ -9,7 +9,7 @@ const Footer = () => {
                 {/* Contact Details */}
                 <div>
                     <h3 className="footer-heading">Contact Details</h3>
-                    <p className="footer-text">exclusive@gmail.com</p>
+                    <p className="footer-text">powertech@gmail.com</p>
                     <p className="footer-text">+88015-88888-9999</p>
                 </div>
 

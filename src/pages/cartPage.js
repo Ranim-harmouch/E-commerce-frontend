@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import Header from '../components/header';
 import Footer from '../components/footer';
+import RedButton from "../components/Redbutton"; // Adjust the path if needed
+import WhiteButton from "../components/WhiteButton"; // Import WhiteButton
 
 const CartPage = () => {
   const { cart, removeFromCart, updateQuantity } = useContext(CartContext);
@@ -68,16 +70,21 @@ const CartPage = () => {
               </tbody>
             </table>
 
-            <div className="flex justify-between mt-4">
-              <Link to="/" className="border p-2">Return To Shop</Link>
+            {/* <div className="flex justify-between mt-4">
+              <Link to="/" className="border p-2">Return To Shop</Link> */}
               {/* Update Cart Button */}
-              <button 
-                onClick={updateCart} // Call the updateCart function when clicked
-                className="border p-2"
-              >
-                Update Cart
-              </button>
-            </div>
+              {/* <button 
+                onClick={updateCart} // Call the updateCart function when clicked */}
+            {/* //     className="border p-2"
+            //   >
+            //     Update Cart
+            //   </button>
+            // </div> */}
+             <div className="flex justify-between mt-4">
+              {/* Use WhiteButton for navigation */}
+              <WhiteButton label="Return to Shop" to="/" />
+              <WhiteButton label="Update Cart" to="#" onClick={updateCart} />
+            </div> 
 
             <div className="border p-4 mt-6 w-1/3">
               <h3 className="text-lg font-semibold mb-2">Cart Total</h3>
@@ -85,7 +92,8 @@ const CartPage = () => {
               <p>Shipping: <span className="float-right">Free</span></p>
               <hr className="my-2" />
               <p className="font-bold">Total: <span className="float-right">${subtotal.toFixed(2)}</span></p>
-              <button className="w-full mt-4 bg-red-500 text-white py-2">Proceed to Checkout</button>
+              {/* Replace the default button with RedButton */}
+              <RedButton label="Proceed to Checkout" to="/checkout" />
             </div>
           </>
         )}
