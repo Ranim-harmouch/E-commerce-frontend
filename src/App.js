@@ -11,8 +11,10 @@ import Unauthorized from './pages/Unauthorized';
 import Contact from "./pages/contact";
 import ProtectedRoute from './components/ProtectedRoute';
 import CartPage from "./pages/cartPage";  // Your cart page
+
 import ChekoutPage from "./pages/CheckoutPage"; // Your checkout page
 import ProductPage from "./pages/ProductPage"; 
+
 const App = () => {
 
   return (
@@ -27,15 +29,22 @@ const App = () => {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
 
+        {/* Single Product Page and Products By Category Page */}
+        <Route path="/product/:id" element={<SingleProductPage />} />
+        <Route path="/products/category/:category" element={<ProductsByCategoryPage />} />
+
         {/* Protected Routes */}
         <Route path="/about" element={<ProtectedRoute><About /></ProtectedRoute>} />
         <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
 
         <Route path="/unauthorized" element={<Unauthorized />} />
         <Route path="/cart" element={<CartPage />} />
+
         <Route path="/contact" element={<Contact />}/>
+
         <Route path="/checkout" element={<ChekoutPage />} />
         <Route path="/product" element={<ProductPage />} /> 
+
         
       </Routes>
 
