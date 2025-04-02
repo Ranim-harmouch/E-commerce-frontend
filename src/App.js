@@ -10,7 +10,7 @@ import Dashboard from './pages/dashboard';
 import Unauthorized from './pages/Unauthorized';
 import Contact from "./pages/contact";
 import ProtectedRoute from './components/ProtectedRoute';
-import CartPage from "./pages/CartPage";  // Your cart page
+import CartPage from "./pages/cartPage";  // Your cart page
 import ChekoutPage from "./pages/CheckoutPage"; // Your checkout page
 import ProductPage from "./pages/ProductPage"; 
 const App = () => {
